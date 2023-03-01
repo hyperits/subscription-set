@@ -1,13 +1,15 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"github.com/hyperits/subscription-sets/application/dto"
 	"io/ioutil"
 	"net/http"
 )
 
 func main() {
-	res, err := http.Get("https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2019-1010218")
+	res, err := http.Get("https://services.nvd.nist.gov/rest/json/cves/2.0/?resultsPerPage=100&startIndex=0")
 	if err != nil {
 		fmt.Println("Fatal error ", err.Error())
 	}
@@ -18,6 +20,13 @@ func main() {
 	if err != nil {
 		fmt.Println("Fatal error ", err.Error())
 	}
+	var cveList dto.CveDTO
+	err = json.Unmarshal(content, &cveList)
+	if err != nil {
+		fmt.Println("marshal error ", err.Error())
+	}
+	for _, v := range cveList.Vulnerabilities {
+		fmt.Println(v.Info.ID)
+	}
 
-	fmt.Println(string(content))
 }
