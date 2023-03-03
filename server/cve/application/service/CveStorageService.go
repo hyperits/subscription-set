@@ -1,6 +1,8 @@
 package service
 
-import "github.com/hyperits/subscription-sets/internal/data"
+import (
+	"github.com/hyperits/subscription-sets/cve/internal/data"
+)
 
 // CveStorageService curd
 type CveStorageService struct {

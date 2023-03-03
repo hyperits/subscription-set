@@ -2,8 +2,8 @@ package data
 
 import (
 	"context"
-	"github.com/hyperits/subscription-sets/internal/biz"
-	"github.com/hyperits/subscription-sets/internal/pkg"
+	"github.com/hyperits/subscription-sets/cve/internal/biz"
+	"github.com/hyperits/subscription-sets/cve/internal/pkg"
 )
 
 // CveRepo repo

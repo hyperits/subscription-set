@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/hyperits/subscription-sets/application/dto"
+	"github.com/hyperits/subscription-sets/cve/application/dto"
 	"io/ioutil"
 	"net/http"
 )

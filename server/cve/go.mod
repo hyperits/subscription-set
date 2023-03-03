@@ -1,4 +1,4 @@
-module github.com/hyperits/subscription-sets
+module github.com/hyperits/subscription-sets/cve
 
 go 1.17
 
